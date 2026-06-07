@@ -18,8 +18,6 @@ The live skill location:
 
 (installs are **copies**, not symlinks — see "Installing a skill").
 
-**`docs/references/` holds reference exemplars only** (e.g. `flo-SKILL.md`, to match style and frontmatter). It is *not* part of the lifecycle and is never written to by it.
-
 ### New skill
 
 1. Develop directly in the live folder; `/reload-skills` and test as you go.
@@ -53,11 +51,10 @@ Run the new version *alongside* the old one so the live skill never goes down an
 
 - Archived specs are version-stamped: `docs/archive/<name>-SKILL-v<N>.md` (e.g. `opn-SKILL-v1.md`). The archive accumulates one entry per superseded version, starting at the **first revision** (N = next unused number for that skill).
 - Never put a version number in the live skill's folder/name — the live skill is always just `<name>`. The `-v2` suffix exists *only* on the temporary parallel-dev folder and is deleted on promotion.
-- `docs/references/` is reference material, not lifecycle output.
 
 ## SKILL.md frontmatter
 
-Match existing skills (see `docs/references/flo-SKILL.md`). Minimum:
+Match existing skills (see `docs/archive/flo-SKILL-v1.md` or any live skill). Minimum:
 
 ```yaml
 ---

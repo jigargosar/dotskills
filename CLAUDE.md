@@ -6,7 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 `dotskills` authors **Claude Code skill specifications** — Markdown `SKILL.md` files with YAML frontmatter. There is no build, test, or lint system; everything is Markdown. Don't look for package manifests or CI.
 
-## Skill lifecycle — parallel development
+## Skill lifecycle
+
+Two tiers, by change size. **Minor fix → mini workflow** (snapshot to archive, edit live in place). **Substantial/risky change that needs zero-downtime → parallel dev.** Don't reach for parallel dev for a typo.
 
 **Iron rule: the live skill folder is the *single* working copy. Never keep a separate local draft in the repo.** Two editable copies always drift out of sync (this caused real confusion once). The repo's record of a skill is its **archive history** in `docs/archive/`; the live folder is always the current version. The lifecycle never produces any other copy.
 
@@ -23,7 +25,18 @@ The live skill location:
 1. Develop directly in the live folder; `/reload-skills` and test as you go.
 2. That's it — it lives in the live folder. Nothing is archived until its **first revision**.
 
+### Minor fix (mini workflow)
+
+For small, low-risk edits — typos, frontmatter tweaks, wording — skip parallel dev entirely.
+
+1. **Snapshot current live → archive:** `cp …/<name>/SKILL.md` → `docs/archive/<name>-SKILL-v<N>.md` (N = next unused number; first revision archives `v1`). This is your restore point.
+2. **Edit live in place** — `/reload-skills` and test. No temp folder, no `.bak`.
+
+The archive snapshot *is* the safety net, so it's taken **before** editing. If the fix goes wrong, restore from the archived `v<N>`.
+
 ### Revise an existing live skill (parallel dev, zero downtime)
+
+Use this only when the change is large or risky enough that the live skill must stay up while you work.
 
 Run the new version *alongside* the old one so the live skill never goes down and you can break the in-progress copy freely.
 

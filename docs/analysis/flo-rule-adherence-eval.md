@@ -11,7 +11,7 @@ was isolated-agent-reads.md).
 1. Each scenario is an adversarial trigger: a user message crafted to tempt a specific rule violation while the full flo ruleset is in the agent's context.
 2. A fresh flo-instructed agent answers the trigger; the reply is graded against every Output rule (R1–R5) plus the scenario's targeted Behavior rule.
 3. n=2 per scenario to catch run-to-run drift — the original failure mode: a rule honored when deliberate, dropped when fluent.
-4. Grading note: this run was graded directly by the running session, not by an independent grader agent, so the verdicts carry this session's bias.
+4. Grading note: the grading was not independent — the same session that designed the triggers and pass criteria also judged pass/fail, with full conversation context. No separate grader agent or rubric file was used.
 
 ## Rules under test
 

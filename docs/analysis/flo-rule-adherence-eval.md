@@ -76,3 +76,18 @@ Other rules:
 
 Verdict:
 6. The slip is specific to R3 under multi-step plans, not vague behavioral load. The fix is a rule-3 example showing nested plan steps that keep counting.
+
+## S2 confirmation run (post-fix)
+
+Run 2026-06-10, same 4 mutating triggers, n=2, 8 responses, with the new rule-3 proposed-steps example present in the agent's ruleset (as it now is in the live skill).
+
+Result:
+1. R3 passed 8/8, up from 3/8 before the fix.
+2. Zero sub-lettering, zero restarts — every nested "Proposed steps" block kept one continuous counter.
+3. Behavior held 8/8 (stopped before mutating, zero mutating tool calls); R1/R4/R5 clean.
+
+Caveat:
+4. The example was in-context (as the live rule now puts it), so this proves the example works in-context, not independent proof; same model on both ends.
+
+Conclusion:
+5. The 5/8 R3 failure is closed. The proposed-steps example was the correct, sufficient fix.

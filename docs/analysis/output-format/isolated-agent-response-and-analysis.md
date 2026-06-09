@@ -60,6 +60,7 @@ Explain your understanding of it.
 - Tool calls: **0** — isolation held on tools (no "cheating").
 - Model: inherited session model.
 - CLAUDE.md / env leakage: **not probed** in this run.
+- Agent definition: `.claude/agents/isolated-reasoner.md` (the `isolated-reasoner` system prompt — not reproduced here).
 
 ## 5. Rule-by-rule: ours / theirs / skeptical take
 

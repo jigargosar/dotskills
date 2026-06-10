@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+> ⚠️ Handle with care: this file accreted across plan revisions, so some wording and points are stale or no longer relevant. Read for intent, and don't take any single line out of its surrounding context.
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## What this repo is

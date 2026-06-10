@@ -4,6 +4,13 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Current status (in progress)
+
+Two tracks open:
+
+1. Status report (docs/claude-status-report.md) — original task, in progress. Remaining: correct MCP scope (shadcn = User config; Gmail + Context7 = claude.ai config), gather plugin component inventory (`claude plugin details`), verify cross-agent skill fan-out.
+2. flo-v2 monk redesign — PAUSED. Plan in docs/flo-monk-improvement-plan.md. Restore point docs/archive/flo-v2-SKILL-v1.md. Resume after the report.
+
 ## What this repo is
 
 `dotskills` authors **Claude Code skill specifications** — Markdown `SKILL.md` files with YAML frontmatter. There is no build, test, or lint system; everything is Markdown. Don't look for package manifests or CI.

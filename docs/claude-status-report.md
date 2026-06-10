@@ -9,13 +9,26 @@
 
 Snapshot: 2026-06-10
 
-# MCP servers (user-configured)
+# MCP servers
 
-Source: `claude mcp list`. These are user-scope servers only; plugin-provided MCPs are not listed here.
+Source: `claude mcp list`, `claude mcp get`, and config-file inspection.
 
-1. claude.ai Gmail — https://gmailmcp.googleapis.com/mcp/v1 — Connected
-2. claude.ai Context7 — https://mcp.context7.com/mcp — Connected
-3. shadcn — `npx.cmd shadcn@latest mcp` — Connected
+As of 2026-06-10, `claude mcp list` reports: No MCP servers configured. All were removed or disabled during this investigation.
+
+Three independent sources feed MCP servers, and they do not sync:
+
+1. CLI / local config — `claude mcp add` writes server defs to `~/.claude.json` (user or local scope) or to a project `.mcp.json` (project scope). `settings.json` never holds server definitions. Add-able scopes are only local / user / project.
+2. claude.ai account — web connectors, synced via your login, shown as `claudeai` scope. Cannot be created from the CLI.
+3. Claude Desktop connectors — managed in Desktop → Connectors. They surface into Claude Code as `claudeai` scope when enabled, and vanish from `claude mcp list` when disabled (verified). Stored in the Desktop app's own store, not in `claude_desktop_config.json` (whose `mcpServers` stays `{}`).
+
+What was present, and what happened to it:
+
+1. shadcn — was a user-scope server in `~/.claude.json` (`npx.cmd shadcn@latest mcp`). Removed via `claude mcp remove shadcn -s user`. Origin was a manual `claude mcp add -s user`, not shadcn's `mcp init` (which only writes a project `.mcp.json`).
+2. Gmail, Context7, Shadcn UI — Claude Desktop connectors (Gmail/GitHub under "Web"; Context7, Shadcn UI, Filesystem, Windows-MCP, Claude in Chrome under "Desktop"). Disabled in Desktop; gone from the list.
+
+Add on demand (global): `claude mcp add shadcn -s user -- npx shadcn@latest mcp`. Note: neither shadcn's docs nor the `@jpisnice/shadcn-ui-mcp-server` README document a global install — you assemble it yourself with `-s user`.
+
+Deferred (pragmatic): the Desktop-app vs CLI vs web config split is real and the surfaces do not sync. Not worth resolving further; `claude mcp add` covers the CLI case when needed.
 
 # Plugins
 

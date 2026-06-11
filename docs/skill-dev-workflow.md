@@ -1,6 +1,7 @@
 # Skill dev workflow
 
 Archives in docs/archive/ are frozen snapshots — never edit them.
+Keep backups unique — snapshot only when the skill changed.
 
 ## Edit original skill in place
 1. Iterate: edit, back up, restart the session, test.

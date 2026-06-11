@@ -1,4 +1,4 @@
-# flo feedback — observed failures and fixes
+# flo-v2 feedback — observed failures and fixes
 
 Real failures from a working session where flo-v2 (byte-identical to flo, no edits) was the active session skill. Each item is both a fix target and a test case.
 
@@ -25,10 +25,10 @@ Real failures from a working session where flo-v2 (byte-identical to flo, no edi
 - Over-split bash commands that have no shell operators — overcorrection.
 
 ## Finding: two unrelated concerns bundled
-- flo carries two jobs: output style (its named purpose) and agent action-discipline (STOP before executing, don't deviate, ask-don't-assume). The failures split along that same seam.
+- flo-v2 carries two jobs: output style (its named purpose) and agent action-discipline (STOP before executing, don't deviate, ask-don't-assume). The failures split along that same seam.
 - Consider separating the discipline rules from the output-style skill. Format-first regardless.
 
 ## Approach
 - Fix one aspect first: format. Discipline second, same loop.
 - Design by subtraction — a single direct nudge often works ("don't narrate"); favor fewer, sharper rules over more.
-- Testing: run the failure-triggering prompts against the fixed flo and compare to this session's baseline (the failures above).
+- Testing: run the failure-triggering prompts against the fixed flo-v2 and compare to this session's baseline (the failures above).

@@ -9,7 +9,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Two tracks open:
 
 1. Status report (docs/claude-status-report.md) — original task, in progress. MCP scope done (CLI list empty; Gmail + Context7 = claude.ai-scoped; shadcn deferred — desktop/cli/web split noted). Remaining: gather plugin component inventory (`claude plugin details`), verify cross-agent skill fan-out.
-2. flo-v2 monk redesign — PAUSED. Plan in docs/flo-monk-improvement-plan.md. Restore point docs/archive/flo-v2-SKILL-v1.md. Resume after the report.
+2. flo-v2 monk redesign — RESUMED. Plan in docs/flo-monk-improvement-plan.md. Restore point docs/archive/flo-v2-SKILL-v1.md.
+   - First: update the ambiguous workflow. flo-v2 sits between two conflicting lifecycle models — temp parallel-dev folder (omit `name:`, deleted on promotion) vs standalone skill (`name: flo-v2`, archived as v1). Resolve which one flo-v2 is and update the Skill lifecycle section before applying the 4 plan edits or promoting.
 
 ## What this repo is
 

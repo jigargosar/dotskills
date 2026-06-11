@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Two tracks open:
 
-1. Status report (docs/claude-status-report.md) — original task, in progress. Remaining: correct MCP scope (shadcn = User config; Gmail + Context7 = claude.ai config), gather plugin component inventory (`claude plugin details`), verify cross-agent skill fan-out.
+1. Status report (docs/claude-status-report.md) — original task, in progress. MCP scope done (CLI list empty; Gmail + Context7 = claude.ai-scoped; shadcn deferred — desktop/cli/web split noted). Remaining: gather plugin component inventory (`claude plugin details`), verify cross-agent skill fan-out.
 2. flo-v2 monk redesign — PAUSED. Plan in docs/flo-monk-improvement-plan.md. Restore point docs/archive/flo-v2-SKILL-v1.md. Resume after the report.
 
 ## What this repo is

@@ -103,3 +103,6 @@ was not required, was expansion of unnecessary claim.
 
 ❯ didnt follow instruction, made more changes than asked. without confirmation of extrachanges.
 
+---
+
+complex command, I asked for steps
